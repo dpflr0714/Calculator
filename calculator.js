@@ -14,11 +14,13 @@ function multiply(a,b){
 }
 
 function divide(a,b){
+	if(b == 0){
+		return "Yooo.. you can't divide by 0"
+	} else {
 	let result = parseInt(a) / parseInt(b);
 	return result;
+	}
 }
-
-
 
 function operator(op, a, b){
 	if(op === "add"){
@@ -32,16 +34,12 @@ function operator(op, a, b){
 	}
 }
 
-function equal(){
-
-
-}
-
 let runningDisplay = document.getElementById("display");
 
 let numberInputs = document.getElementsByClassName("numInput");
 let opInputs = document.getElementsByClassName("opInput");
 let equalInput = document.getElementById("equal");
+let allClearInput = document.getElementById("allClear");
 
 for(let i = 0; i < numberInputs.length; i++){
 	numberInputs[i].addEventListener("click", (event) => {
@@ -66,33 +64,36 @@ for(let i = 0; i < opInputs.length; i++){
 		if(operators == undefined){
 			currentNumber = display.textContent;
 			operators = event.target.value;
-		} else{
+			if(currentNumber == ""){
+				message.textContent = "Please enter a number first"
+				operators = undefined;
+			}
+		} else {
 			lastNumber = display.textContent;
 			display.textContent = operator(operators, currentNumber, lastNumber);
 			currentNumber = display.textContent;
 			operators = event.target.value;
 		}
-		/*
-		else if (operators != undefined && lastNumber != ""){
-			currentNumber = display.textContent;
-			display.textContent = operator(operators, currentNumber, lastNumber);
-		} else if (operators == undefined && lastNumber == undefined && currentNumber == undefined){
-			console.log("Please enter a number before any operator")
-		}
-		*/
-		
-		//currentNumber = display.textContent;
-		//display.textContent = ""
+
 		clearDisplay = false;
 	});
 }
 
-/*
 equalInput.addEventListener("click", (event) => {
-	let lastNumber = display.textContent;
 
+	let lastNumber = display.textContent;
 	display.textContent = operator(operators, currentNumber, lastNumber);
+	operators = undefined;
+	lastNumber = undefined;
+	currentNumber = undefined;
+
 	clearDisplay = false;
 });
 
-*/
+allClearInput.addEventListener("click", (event) => {
+
+	display.textContent = "";
+	operators = undefined;
+	lastNumber = undefined;
+	currentNumber = undefined;
+});
