@@ -34,27 +34,26 @@ function operator(op, a, b){
 	}
 }
 
-window.addEventListener("keypress", keyboardEvent)
-//window.addEventListener('keydown', backSpace)
-//Array consisting of Unicodes for allowed characters, (#46 is .)  (#13 is =) 
-let allowedNumbers = [48,49,50,51,52,53,54,55,56,57];
-let allowedOperators = [47,42,45,43];
-//need to add backspace support
+window.addEventListener("keydown", keyboardEvent)
+
+let allowedNumbers = ["0","1","2","3","4","5","6","7","8","9"];
+let allowedOperators = ["/","*","-","+"];
+
 function keyboardEvent(){
-	let key = event.which || event.keyCode;
+	let key = event.key;
 	if(allowedNumbers.includes(key)){
 		if(clearDisplay === false){
 			display.textContent = "";
-			display.textContent += String.fromCharCode(key);
+			display.textContent += key;
 			clearDisplay = true;
 		} else if(clearDisplay === true){
-			display.textContent += String.fromCharCode(key);
+			display.textContent += key;
 		}
 		
 	} else if(allowedOperators.includes(key)){
 		if(operators == undefined){
 			currentNumber = display.textContent;
-			operators = String.fromCharCode(key);
+			operators = key;
 			if(currentNumber == ""){
 				message.textContent = "Please enter a number first"
 				operators = undefined;
@@ -63,12 +62,11 @@ function keyboardEvent(){
 			lastNumber = display.textContent;
 			display.textContent = operator(operators, currentNumber, lastNumber);
 			currentNumber = display.textContent;
-			operators = String.fromCharCode(key);
+			operators = key;
 		}
 
 		clearDisplay = false;
-	} else if(key == "13"){
-
+	} else if(key == "Enter"){
 		if(operators == undefined){
 			null;
 		} else {
@@ -79,8 +77,21 @@ function keyboardEvent(){
 			currentNumber = undefined;
 		}
 		clearDisplay = false;
-	} else if(key == "Backspace"){
-		console.log("Hey")
+	} else if(key == "Backspace" || key == "Delete"){
+		let oldNumber = display.textContent;
+		let newNumber = oldNumber.substring(0, oldNumber.length - 1);
+		display.textContent = newNumber;
+		console.log("HI")
+	} else if(key == "."){
+		searchString = display.textContent;
+
+		if(searchString.includes(".") ==  false){
+			display.textContent += key;
+		} else {
+			null;
+		}
+	} else {
+		null;
 	}
 
 }
