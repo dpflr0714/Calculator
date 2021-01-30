@@ -1,21 +1,105 @@
 #display{
 	width: 300px;
-	height: 20px;
+	height: 40px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+	background: rgb(0,0,0, 0.5);
+	font-size: 2em;
+	text-align: right;
+	border-radius: 7px 7px 0 0;
+	font-family: 'Ubuntu', sans-serif;
+	color: white;
+	background-color: black;
 }
 .calculatorBody{
 	display: flex;
 	flex-wrap: wrap;
 	width: 300px;
-	height: 500px;
+	height: 340px;
+	flex-direction: column;
+	padding: 10px;
+	background-color: grey;
+	border-radius: 12px;
 }
 .center{
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
+}
+.bottomButton{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 300px;
+	height: 250px;
+
+}
+.topButton{
+	display: flex;
+	width: 300px;
+	height: 50px;
+	cursor: pointer;
+	align-items: stretch;
+	justify-content: center;
+
+}
+.bigButton{
+	flex-basis: 50%;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 25px;
+	background-color: rgb(84, 82, 80);
+	cursor: pointer;
+	border: 0px;
+}
+.bigButton:hover{
+	background-color: rgb(186, 177, 166);
+}
+.smallButton{
+	background-color: rgb(181, 172, 161);
+	display: flex;
+	flex-basis: 25%;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 25px;
+	cursor: pointer;
+	border: 0px;
+}
+.smallButton:hover{
+	background-color: rgb(174, 167, 156);
+}
+.opInput{
+	background-color: #e7e7e7;
+}
+.opInput:hover{
+	background-color: rgb(207, 230, 230);
+}
+#equal{
+	background-color: rgb(255, 204, 204);
+}
+#equal:hover{
+	background-color: rgb(250, 199, 199);
+}
+#decimal{
+	border: 0px;
+	border-radius: 0 0 0 7px;
+}
+#add{
+	border-radius: 0 0 7px 0;
+}
+
+#message{
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 25px;
+}
+button{
+ 	outline: none;
+}
+h1{
 	text-align: center;
-	min-height: 100vh;
+	font-family: 'Ubuntu', sans-serif;
+}
+body{
+	
 }

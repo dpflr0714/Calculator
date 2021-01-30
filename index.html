@@ -2,6 +2,9 @@
 <html>
 <head>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
 <title>Web Calculator</title>
 </head>
 <body>
@@ -10,28 +13,34 @@
 <div class="center">
 	<div class="calculatorBody">
 		<div id="display"></div>
-		<div>
-			<button id ="0" value="0" class="numInput">0</button>
-			<button id ="1" value="1" class="numInput">1</button>
-			<button id ="2" value="2" class="numInput">2</button>
-			<button id ="3" value="3" class="numInput">3</button>
-			<button id ="4" value="4" class="numInput">4</button>
-			<button id ="5" value="5" class="numInput">5</button>
-			<button id ="6" value="6" class="numInput">6</button>
-			<button id ="7" value="7" class="numInput">7</button>
-			<button id ="8" value="8" class="numInput">8</button>
-			<button id ="9" value="9" class="numInput">9</button>
-			<button id ="decimal" value=".">.</button>
-			<button id ="equal" value="=">=</button>
-			<button id ="add" value="+" class="opInput">+</button>
-			<button id ="subract" value="-" class="opInput">-</button>
-			<button id ="multiply" value="*" class="opInput">*</button>
-			<button id ="divide" value="/" class="opInput">/</button>
-			<button id ="Backspace">Back</button>
-			<button id ="allClear">A/C</button>
+			<div class="topButton">
+				<button id ="Backspace" class="bigButton">Back</button>
+				<button id ="allClear" class="bigButton">A/C</button>
+			</div>
+		<div class="bottomButton">
+			<button id ="1" value="1" class="numInput smallButton">1</button>
+			<button id ="2" value="2" class="numInput smallButton">2</button>
+			<button id ="3" value="3" class="numInput smallButton">3</button>
+			<button id ="divide" value="/" class="opInput smallButton">/</button>
+
+			<button id ="4" value="4" class="numInput smallButton">4</button>
+			<button id ="5" value="5" class="numInput smallButton">5</button>
+			<button id ="6" value="6" class="numInput smallButton">6</button>
+			<button id ="multiply" value="*" class="opInput smallButton">*</button>
+
+			<button id ="7" value="7" class="numInput smallButton">7</button>
+			<button id ="8" value="8" class="numInput smallButton">8</button>
+			<button id ="9" value="9" class="numInput smallButton">9</button>
+			<button id ="subract" value="-" class="opInput smallButton">-</button>
+			
+			<button id ="decimal" value="." class="smallButton">.</button>
+			<button id ="0" value="0" class="numInput smallButton">0</button>
+			<button id ="equal" value="=" class="smallButton">=</button>
+			<button id ="add" value="+" class="opInput smallButton">+</button>
+			
 		</div>
-		<div id="message"></div>
 	</div>
+	<div id="message"></div>
 </div>
 </body>
 <script type="text/javascript" src="calculator.js"></script>
