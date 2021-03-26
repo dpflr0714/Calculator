@@ -3,7 +3,7 @@ https://github.com/dpflr0714/Calculator
 
 Project created using HTML, CSS, and Javascript as part of the Odin Project
 
-[Live Page](https://dpflr0714.dpflr0714.github.io/Calculator/)
+[Live Page](https://dpflr0714.github.io/Calculator/)
 
 ## Functionality
 - A very simple scientific calculator that can handle simple operations such as addition, subtraction, multiplication, and division.
